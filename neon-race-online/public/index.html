@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="nl-BE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Race tegen de klok — speel gratis online</title>
+  <meta name="description" content="Speel Race tegen de klok: een neon 3D-racegame in je browser. Race tegen de tijd, verbeter je prestaties en speel online." />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Race tegen de klok" />
+  <meta property="og:description" content="Start Race tegen de klok, de neon 3D-racegame die je rechtstreeks in je browser speelt." />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "Race tegen de klok",
+    "genre": ["Racing", "Arcade"],
+    "gamePlatform": "Web browser",
+    "playMode": "MultiPlayer",
+    "inLanguage": "nl-BE",
+    "description": "Een neon 3D-racegame die je rechtstreeks in je browser speelt."
+  }
+  </script>
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js"
+      }
+    }
+  </script>
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <div id="hud">
+    <div class="brand">RACE <span>TEGEN DE KLOK</span></div>
+    <div class="help">WASD / pijltjes = rijden · Spatie = remmen</div>
+    <div id="raceInfo">RONDE <b id="lap">0/3</b></div>
+    <div id="difficulty">MOEILIJKHEID <b id="difficultyValue">1</b></div>
+    <div id="status">Verbinden met server…</div>
+    <div id="players">Spelers: 1</div>
+  </div>
+  <div id="message">
+    <h1>Race tegen de klok</h1>
+    <p>Een neon 3D-racegame — speel direct in je browser</p>
+    <button id="start">START RIJDEN</button>
+    <small>Gebruik WASD of de pijltjestoetsen. Kijk uit voor de rand van het circuit!</small>
+  </div>
+  <div id="touchControls" aria-label="Mobiele besturing">
+    <button data-key="ArrowLeft">◀</button>
+    <div>
+      <button data-key="ArrowUp">▲</button>
+      <button data-key="ArrowDown">▼</button>
+    </div>
+    <button data-key="ArrowRight">▶</button>
+  </div>
+  <script type="module" src="game.js"></script>
+</body>
+</html>

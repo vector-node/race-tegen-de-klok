@@ -1,0 +1,17 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #050615; color: white; font-family: system-ui, Arial, sans-serif; }
+canvas { display: block; }
+#hud { position: fixed; z-index: 2; top: 16px; left: 18px; right: 18px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; pointer-events: none; text-shadow: 0 0 12px #00d9ff; }
+.brand { font-size: 23px; font-weight: 950; letter-spacing: 2px; color: #ff4df0; text-shadow: 0 0 10px #ff24e8, 0 0 28px #ff24e8; }
+.brand span { color: #42eaff; text-shadow: 0 0 10px #00cfff, 0 0 28px #00cfff; }
+.help, #status, #players, #raceInfo, #difficulty { font-size: 12px; background: #080b20df; border: 1px solid #00d9ff9c; border-radius: 999px; padding: 8px 12px; box-shadow: 0 0 12px #00bfff2c, inset 0 0 10px #00bfff12; }
+#raceInfo b, #difficulty b { color: #ff4df0; margin-left: 4px; }
+#status { margin-left: auto; color: #79faff; }
+#message { position: fixed; z-index: 3; top: 50%; left: 50%; transform: translate(-50%, -50%); width: min(90vw, 440px); text-align: center; padding: 28px; border-radius: 22px; background: #07091cf2; border: 1px solid #ff4df0; box-shadow: 0 0 18px #ff4df055, 0 0 60px #00d9ff22; }
+#message h1 { margin: 0 0 6px; font-size: clamp(32px, 8vw, 54px); letter-spacing: 3px; color: #42eaff; text-shadow: 0 0 10px #00cfff, 0 0 28px #00cfff; }
+#message p { color: #d8caff; margin: 0 0 20px; }
+#message button { border: 1px solid #fff; border-radius: 12px; padding: 14px 24px; background: linear-gradient(90deg, #00d9ff, #ff4df0); color: #07091c; font-weight: 950; cursor: pointer; box-shadow: 0 0 22px #00d9ff66; }
+#message small { display: block; margin-top: 16px; color: #b9c6e4; line-height: 1.5; }
+#touchControls { display: none; position: fixed; z-index: 2; bottom: 20px; left: 0; right: 0; justify-content: space-between; padding: 0 20px; pointer-events: none; }
+#touchControls button { pointer-events: auto; width: 56px; height: 56px; border-radius: 18px; border: 1px solid #00d9ff; background: #080b20cc; color: #42eaff; font-size: 23px; box-shadow: 0 0 16px #00d9ff55; }
+@media (max-width: 700px) { .help { display: none; } #status { margin-left: 0; } #touchControls { display: flex; } }
