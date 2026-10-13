@@ -1,1 +1,40 @@
+name: Spel online zetten
 
+"on":
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  publiceren:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Bestanden ophalen
+        uses: actions/checkout@v4
+
+      - name: Spel klaarmaken
+        run: |
+          mkdir site
+          cp -r neon-race-online/public/. site/
+
+      - name: Bestanden uploaden
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Spel publiceren
+        id: deployment
+        uses: actions/deploy-pages@v4
